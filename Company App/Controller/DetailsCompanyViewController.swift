@@ -34,17 +34,14 @@ class DetailsCompanyViewController: UIViewController, MKMapViewDelegate {
         createShadowOfView(yourView: cityView)
         createShadowOfView(yourView: mappView)
         map.delegate = self
-        manger = CLLocationManager()
-        print("long = \(longitude), lat= \(longitude), name= \(name), city= \(city)")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
-        let annotation1 = MKPointAnnotation()
-        annotation1.coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
-                annotation1.title = "donia"
-                annotation1.subtitle = "welcome"
-                self.map.addAnnotation(annotation1)
+        let location = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
+        setStartingLocation(location: location, distance: 1000)
+        addAnnotation()
     }
+    
     func setDataTOLabels(){
         idLabel.text = id
         countryLabel.text = country
@@ -60,12 +57,20 @@ class DetailsCompanyViewController: UIViewController, MKMapViewDelegate {
         yourView.layer.cornerRadius = 10
     }
     
-    func showLocationOnMap(){
+    func addAnnotation(){
         let myAnnotaion = Annotaion(c: CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!), t: name, s: "Welcome in \(city) city")
         map.addAnnotation(myAnnotaion)
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         print(name)
+    }
+    
+    func setStartingLocation(location: CLLocation, distance: CLLocationDistance){
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
+        map.setRegion(region, animated: true)
+        map.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: region), animated: true)
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 30000)
+        map.setCameraZoomRange(zoomRange, animated: true)
     }
 }

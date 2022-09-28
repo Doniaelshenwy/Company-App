@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         CompanyAPI().getData { [self] result in
             switch result {
             case .success(let data):
-                print(data)
                 self.CompanyArray = data!.networks
                 self.tableView.reloadData()
             case .failure(let error):
@@ -37,7 +36,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count= \(CompanyArray.count)")
         return CompanyArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
