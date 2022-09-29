@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var CompanyArray : [Network] = []
     override func viewDidLoad() {
@@ -16,12 +18,16 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView .dataSource = self
         tableView.separatorStyle = .none
+        activityIndicatorView.type = .ballRotate
+        activityIndicatorView.color = .black
+        activityIndicatorView.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         CompanyAPI().getData { [self] result in
             switch result {
             case .success(let data):
+                activityIndicatorView.stopAnimating()
                 self.CompanyArray = data!.networks
                 self.tableView.reloadData()
             case .failure(let error):
@@ -40,12 +46,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SingleNameCompanyTableViewCell
-        if indexPath.row % 2 == 0{
-            cell.backgroundColor = .white
-        } else {
-            cell.backgroundColor = UIColor(named: "Color")
-        }
-        animateTableView(index: indexPath.row, cell: cell)
+       // animateTableView(index: indexPath.row, cell: cell)
         cell.nameCompanyLabel.text = CompanyArray[indexPath.row].name
         cell.selectionStyle = .none
         cell.createShadowOfView()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6FC39BF2A513C39694CA5826 /* Pods_Company_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C220D8690AF4ED4C1F0BC0B5 /* Pods_Company_App.framework */; };
 		FC0E0C7D28E1C0C400B9E348 /* DetailsCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E0C7C28E1C0C400B9E348 /* DetailsCompanyViewController.swift */; };
+		FC2C626128E5115A006B535B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C626028E5115A006B535B /* Network.swift */; };
+		FC2C626328E511AF006B535B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C626228E511AF006B535B /* Location.swift */; };
 		FC3D0ACE28E0953D00CE19DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D0ACD28E0953D00CE19DE /* AppDelegate.swift */; };
 		FC3D0AD028E0953D00CE19DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D0ACF28E0953D00CE19DE /* SceneDelegate.swift */; };
 		FC3D0AD228E0953D00CE19DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D0AD128E0953D00CE19DE /* ViewController.swift */; };
@@ -50,6 +52,8 @@
 		C220D8690AF4ED4C1F0BC0B5 /* Pods_Company_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Company_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23D6F249D59024A078A51C2 /* Pods-Company App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Company App.debug.xcconfig"; path = "Target Support Files/Pods-Company App/Pods-Company App.debug.xcconfig"; sourceTree = "<group>"; };
 		FC0E0C7C28E1C0C400B9E348 /* DetailsCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCompanyViewController.swift; sourceTree = "<group>"; };
+		FC2C626028E5115A006B535B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FC2C626228E511AF006B535B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FC3D0ACA28E0953D00CE19DE /* Company App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Company App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3D0ACD28E0953D00CE19DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC3D0ACF28E0953D00CE19DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				FC3D0B0B28E0A78400CE19DE /* CompanyModel.swift */,
+				FC2C626028E5115A006B535B /* Network.swift */,
+				FC2C626228E511AF006B535B /* Location.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
@@ -417,11 +423,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2C626128E5115A006B535B /* Network.swift in Sources */,
 				FC3D0AD228E0953D00CE19DE /* ViewController.swift in Sources */,
 				FC3D0ACE28E0953D00CE19DE /* AppDelegate.swift in Sources */,
 				FC3D0B0C28E0A78400CE19DE /* CompanyModel.swift in Sources */,
 				FC3D0B0228E0971100CE19DE /* Base.swift in Sources */,
 				FC0E0C7D28E1C0C400B9E348 /* DetailsCompanyViewController.swift in Sources */,
+				FC2C626328E511AF006B535B /* Location.swift in Sources */,
 				FC3D0B0428E0998100CE19DE /* BaseAPI.swift in Sources */,
 				FC3D0B0A28E0A73D00CE19DE /* CompanyAPI.swift in Sources */,
 				FC5F78F328E11E66000A1924 /* SingleNameCompanyTableViewCell.swift in Sources */,
