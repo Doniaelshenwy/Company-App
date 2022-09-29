@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         tableView .dataSource = self
         tableView.separatorStyle = .none
         activityIndicatorView.type = .ballRotate
-        activityIndicatorView.color = .black
+        activityIndicatorView.color = UIColor(named: "Color")!
         activityIndicatorView.startAnimating()
     }
     

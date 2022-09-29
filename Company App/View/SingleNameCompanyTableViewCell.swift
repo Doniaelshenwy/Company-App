@@ -18,6 +18,7 @@ class SingleNameCompanyTableViewCell: UITableViewCell {
         nameView.layer.shadowRadius = 2
         nameView.layer.borderWidth = 0
         nameView.layer.cornerRadius = 5
+        nameCompanyLabel.textColor = UIColor(named: "Color")
     }
     override func awakeFromNib() {
         super.awakeFromNib()
